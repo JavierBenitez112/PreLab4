@@ -47,6 +47,10 @@
 
    - `American Process`:
        - Encriptar las tarjetas American y prepararlas para ser guardadas en un archivo.
+- `Ecryption`:
+   - Encriptar las tarjetas con un algoritmo de encriptacion.
+     - Emperador:
+     - MD5:
 
 - `App`:
     - Correr la aplicacion
@@ -59,4 +63,4 @@
 -`FILES`:
     - Save:
 
-
+**NOTE**: Pls LEAN lo que dice las instrucciones. :D

@@ -4,12 +4,11 @@
   - Main App
   - Card Filter
   - Process Manager
-  - Card Filter
-  - README (JIJIJI, por los jajas no mas)
+  - Encryption
 - `Ernesto`:
   - Arreglar UML si hay cambios
   - Poner Analisis mas bonito
-
+  - Readme
 - `Benitez`:
   - JSON Manager
   - Setup de Testings (Para que cada uno se ponga a testear)
