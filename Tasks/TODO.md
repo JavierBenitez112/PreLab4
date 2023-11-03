@@ -9,7 +9,9 @@
   - Arreglar UML si hay cambios
   - Poner Analisis mas bonito
   - Readme
+  - card class
 - `Benitez`:
+
   - JSON Manager
   - Setup de Testings (Para que cada uno se ponga a testear)
 
@@ -27,6 +29,7 @@ Cualquier cosa de esto hablenme por discord, no por wasap (Mensajes en dis)
 ```Lenguaje que uses
 Cuerpo
 ```
+
 Hagan que el testeo tenga sentido con lo que estamos trabajando
 
 ENSERIO NO ME HABLEN EN WASSAP
