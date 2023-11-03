@@ -1,5 +1,5 @@
 package Model.FileManagers;
 
-public abstract class CSVManager implements File{
+public abstract class CSVManager implements IFile{
     
 }
