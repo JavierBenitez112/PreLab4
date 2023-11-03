@@ -1,7 +1,7 @@
 package Controller;
 
 import Model.BasicObjects.*;
-
+import Controller.CardProcess.*;
 
 public abstract class CardFiltering {
     /*
@@ -23,14 +23,29 @@ public abstract class CardFiltering {
         int value = Integer.parseInt(numeroDeTarjeta.substring(0, 1));
         switch (value) {
             case VISA:
-                throw new UnsupportedOperationException("Falta Poner Visa Process");
-            // break;
+                Visa visa = new Visa();
+                try {
+                    visa.Processing(Tarjeta);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
             case MASTERCARD:
-                throw new UnsupportedOperationException("Falta Poner MasterCard Process");
-            // break;
+                MasterCard MasterCard = new MasterCard();
+                try {
+                    MasterCard.Processing(Tarjeta);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
             case AMERICANEXPRESS:
-                throw new UnsupportedOperationException("Falta Poner AmericanExpress Process");
-            // break;
+                American AmericanExpress = new American();
+                try {
+                    AmericanExpress.Processing(Tarjeta);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
             default:
                 break;
         }

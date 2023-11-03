@@ -22,8 +22,9 @@ public class Card {
      * @param FechaDeVencimiento
      * @param CodigoCVV
      */
+    
     public Card(String Usuario, int ID, String PublicKey, double Monto, int Cuotas, int NumeroDeTarjeta,
-            int CodigoDeSeguridad, int FechaDeVencimiento, int CodigoCVV) {
+        int CodigoDeSeguridad, int FechaDeVencimiento, int CodigoCVV) {
         this.Usuario = Usuario;
         this.ID = ID;
         this.PublicKey = PublicKey;
@@ -33,6 +34,13 @@ public class Card {
         this.FechaDeVencimiento = FechaDeVencimiento;
         this.CodigoCVV = CodigoCVV;
 
+    }
+
+    @Override
+    public String toString() {
+        return "Card [CodigoCVV=" + CodigoCVV + ", CodigoDeSeguridad=" + CodigoDeSeguridad + ", Cuotas=" + Cuotas
+                + ", FechaDeVencimiento=" + FechaDeVencimiento + ", ID=" + ID + ", Monto=" + Monto
+                + ", NumeroDeTarjeta=" + NumeroDeTarjeta + ", PublicKey=" + PublicKey + ", Usuario=" + Usuario + "]";
     }
 
 }

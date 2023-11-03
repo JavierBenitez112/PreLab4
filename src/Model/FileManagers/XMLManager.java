@@ -4,6 +4,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Text;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
@@ -13,7 +14,7 @@ import Model.BasicObjects.Card;
 
 public class XMLManager implements IFile {
     @Override
-    public void Save(Card card, String HASH) {
+    public void Save(Card card, String HASH) throws ParserConfigurationException {
         
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = dbf.newDocumentBuilder();
@@ -31,7 +32,7 @@ public class XMLManager implements IFile {
 
 
         
-         createXmlElement(document, comercioElement, "cuotas", String.valueOf(card.Cuotas));
+        createXmlElement(document, comercioElement, "cuotas", String.valueOf(card.Cuotas));
         
 
         createXmlElement(document, comercioElement, "número_de_tarjeta", String.valueOf(card.NumeroDeTarjeta));
@@ -40,6 +41,7 @@ public class XMLManager implements IFile {
 
 
         try {
+            // TODO: Crear un archivo XML nuevo siempre, (BUSCAR EN EL DIR por nuevo archivo)
             saveXmlToFile(document, "ruta/donde/guardar/archivo.xml");
         } catch (Exception e) {
             

@@ -21,8 +21,7 @@ public abstract class Encryption {
     }
 
     public static String MD5(Card Tarjeta) throws NoSuchAlgorithmException {
-        // TODO: Parsearlas cosas cuando se termine la clase Card
-        String AllInfoString = "";
+        String AllInfoString = Tarjeta.toString();
         try {
             /*
              * Agarra todo los datos de la tarjeta, luego deeso los tranforma en bytes (8

@@ -3,20 +3,20 @@
 - `Pedro`:
   - Main App
   - Card Filter
-  - Process Manager
-  - Encryption
+  <!-- - Process Manager -->
+  <!-- - Encryption -->
 - `Ernesto`:
   - Arreglar UML si hay cambios
   - Poner Analisis mas bonito
   - Readme
-  - card class
+  <!-- - card class -->
 - `Benitez`:
 
-  - JSON Manager
+  <!-- - JSON Manager -->
   - Setup de Testings (Para que cada uno se ponga a testear)
 
 - `Xavi`:
-  - XML Manager
+  <!-- - XML Manager -->
   - CSV Manager
   - Tambien Setups de Testings
 
