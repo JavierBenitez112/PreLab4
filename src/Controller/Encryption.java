@@ -5,13 +5,16 @@ import java.security.NoSuchAlgorithmException;
 
 import Model.BasicObjects.*;
 
+/**
+ * Clase para encriptar diferentes datos de la tarjeta
+ */
 public abstract class Encryption {
 
     public static String Emperador(int Numero){
         String numeroDeTarjeta = Integer.toString(Numero).substring(0, 1);
-        String numeroDeTarjetaEncriptado = "";
+        String numeroDeTarjetaEncriptado = ""; 
         for (int i = 0; i < numeroDeTarjeta.length(); i++) {
-            numeroDeTarjetaEncriptado += numeroDeTarjeta.charAt(i) + 1;
+            numeroDeTarjetaEncriptado += numeroDeTarjeta.charAt(i) + 1; //Shiftea un ASCII
         }
         return numeroDeTarjetaEncriptado;
     }
