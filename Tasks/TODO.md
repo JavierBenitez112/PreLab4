@@ -9,6 +9,7 @@
   - Arreglar UML si hay cambios
   - Poner Analisis mas bonito
   - Readme
+  - Card c;ass
 - `Benitez`:
   - JSON Manager
   - Setup de Testings (Para que cada uno se ponga a testear)
