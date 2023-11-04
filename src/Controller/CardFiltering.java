@@ -1,7 +1,7 @@
 package Controller;
 
-import Model.BasicObjects.*;
-
+import Model.BasicObjects.Card;
+import Controller.CardProcess.*;
 
 public abstract class CardFiltering {
     /*
@@ -10,29 +10,42 @@ public abstract class CardFiltering {
     final static int VISA = 4;
     final static int MASTERCARD = 5;
     final static int AMERICANEXPRESS = 3;
-
-
-
     /*
      * Metodo para filtrar el tipo de tarjeta
      * @param Tarjeta Tarjeta a filtrar
      * @return void
      */
-    public void Filtering(Card Tarjeta){
-        String numeroDeTarjeta = Integer.toString(Tarjeta.NumeroDeTarjeta);
-        int value = Integer.parseInt(numeroDeTarjeta.substring(0, 1));
+    public static void Filtering(Card Tarjeta){
+        int value = Integer.parseInt(Tarjeta.NumeroDeTarjeta.substring(0, 1));
         switch (value) {
             case VISA:
-                throw new UnsupportedOperationException("Falta Poner Visa Process");
-            // break;
+                Visa visa = new Visa();
+                try {
+                    visa.Processing(Tarjeta);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
             case MASTERCARD:
-                throw new UnsupportedOperationException("Falta Poner MasterCard Process");
-            // break;
+                MasterCard MasterCard = new MasterCard();
+                try {
+                    MasterCard.Processing(Tarjeta);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
             case AMERICANEXPRESS:
-                throw new UnsupportedOperationException("Falta Poner AmericanExpress Process");
-            // break;
+                American AmericanExpress = new American();
+                try {
+                    AmericanExpress.Processing(Tarjeta);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
             default:
                 break;
         }
+
+
     }
 }

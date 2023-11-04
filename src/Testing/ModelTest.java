@@ -15,7 +15,7 @@ public class ModelTest {
         JsonManager jsonManager = new JsonManager();
 
         // Crea una instancia de Card para probar
-        Card cardToSave = new Card("Usuario1", 1, "PublicKey1", 100.0, 3, 123456789, 123, 1225, 456);
+        Card cardToSave = new Card("Usuario1", 1, "PublicKey1", 100.0, 3, "123456789", 123, 1225, 456);
 
         // Nombre del archivo donde se guardará el objeto
         String filename = "card.json";

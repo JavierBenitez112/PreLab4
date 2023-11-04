@@ -5,24 +5,23 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import Model.BasicObjects.*;
-
+import javax.xml.datatype.DatatypeFactory;
 /**
  * Clase para encriptar diferentes datos de la tarjeta
  */
 public abstract class Encryption {
 
-    public static String Emperador(int Numero) {
-        String numeroDeTarjeta = Integer.toString(Numero).substring(0, 1);
+    public static String Emperador(String numeroDeTarjeta) {
         String numeroDeTarjetaEncriptado = ""; 
-        for (int i = 0; i < numeroDeTarjeta.length(); i++) {
-            numeroDeTarjetaEncriptado += numeroDeTarjeta.charAt(i) + 1; //Shiftea un ASCII
+        for (char c : numeroDeTarjeta.toCharArray()) {
+            numeroDeTarjetaEncriptado += (char) (c + 1);
         }
+        System.out.println(numeroDeTarjetaEncriptado);
         return numeroDeTarjetaEncriptado;
     }
 
     public static String MD5(Card Tarjeta) throws NoSuchAlgorithmException {
-        // TODO: Parsearlas cosas cuando se termine la clase Card
-        String AllInfoString = "";
+        String AllInfoString = Tarjeta.toString();
         try {
             /*
              * Agarra todo los datos de la tarjeta, luego deeso los tranforma en bytes (8
@@ -35,8 +34,9 @@ public abstract class Encryption {
             byte[] AllInfoByte = AllInfoString.getBytes("UTF-8");
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] hash = md.digest(AllInfoByte);
-            String HashString = new String(hash, "UTF-8");
+            String HashString = DatatypeFactory.newInstance().newDataType("xs:hexBinary").newInstance(hash).toString();
             return HashString;
+            
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }

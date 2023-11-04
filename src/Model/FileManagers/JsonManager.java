@@ -4,7 +4,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import Model.BasicObjects.Card;
-import java.io.File;
+
+
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -42,7 +43,7 @@ public class JsonManager implements IFile {
             String PublicKey = (String) jsonObject.get("PublicKey");
             double Monto = (Double) jsonObject.get("Monto");
             int Cuotas = ((Long) jsonObject.get("Cuotas")).intValue();
-            int NumeroDeTarjeta = ((Long) jsonObject.get("NumeroDeTarjeta")).intValue();
+            String NumeroDeTarjeta = (String) jsonObject.get("NumeroDeTarjeta");
             int CodigoDeSeguridad = ((Long) jsonObject.get("CodigoDeSeguridad")).intValue();
             int FechaDeVencimiento = ((Long) jsonObject.get("FechaDeVencimiento")).intValue();
             int CodigoCVV = ((Long) jsonObject.get("CodigoCVV")).intValue();
