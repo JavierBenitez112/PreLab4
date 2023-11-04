@@ -5,7 +5,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import Model.BasicObjects.*;
-import javax.xml.datatype.DatatypeFactory;
+import java.util.Base64;
 /**
  * Clase para encriptar diferentes datos de la tarjeta
  */
@@ -31,11 +31,10 @@ public abstract class Encryption {
              * Luego Parsea los bytes en un String Y listo :D
              * 
              */
-            byte[] AllInfoByte = AllInfoString.getBytes("UTF-8");
             MessageDigest md = MessageDigest.getInstance("MD5");
-            byte[] hash = md.digest(AllInfoByte);
-            String HashString = DatatypeFactory.newInstance().newDataType("xs:hexBinary").newInstance(hash).toString();
-            return HashString;
+            byte[] hashBytes = md.digest(AllInfoString.getBytes("UTF-8"));
+            String base64Hash = Base64.getEncoder().encodeToString(hashBytes);
+            return base64Hash;
             
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();

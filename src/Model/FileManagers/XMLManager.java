@@ -60,7 +60,8 @@ public class XMLManager implements IFile {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(document);
-        StreamResult result = new StreamResult(new File(filePath));
+        String absolutePath = new File(filePath).getAbsolutePath();
+        StreamResult result = new StreamResult(new File(absolutePath));
         transformer.transform(source, result);
     }
 }

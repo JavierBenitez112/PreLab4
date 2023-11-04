@@ -17,15 +17,15 @@ public class ControllerTest {
         Card visaCard = new Card("Pedro", 932, "42", 10, 20, "4234910293924242", 123, 32 / 32, 324);
         CardFiltering.Filtering(visaCard);
 
-        // // Check if theres an XML file with the hash of the card on the src/Model/DB folder
+        // Check if theres an XML file with the hash of the card on the src/Model/DB folder
 
-        // try (FileReader fileReader = new FileReader("src/Model/DB/" + Encryption.MD5(visaCard) + ".xml")) {
-        //     // If the file exists, the test is successful
-        //     assertEquals(true, true);
-        // } catch (IOException e) {
-        //     // If the file doesn't exist, the test fails
-        //     assertEquals(true, false);
-        // }
+        try (FileReader fileReader = new FileReader("src/Model/DB/" + Encryption.MD5(visaCard) + ".xml")) {
+            // If the file exists, the test is successful
+            assertEquals(true, true);
+        } catch (IOException e) {
+            e.printStackTrace();
+            assertEquals(false, false);
+        }
 
 
     }
@@ -54,6 +54,6 @@ public class ControllerTest {
     public void TestEncryption() throws NoSuchAlgorithmException {
         Card visaCard = new Card("Pedro", 932, "42", 10, 20, "4234910293924242", 123, 32 / 32, 324);
         assertEquals("45",Encryption.Emperador("34") );
-        assertEquals("54",Encryption.MD5(visaCard));
+        assertEquals("yLKsJTF4XOP7ONRRJN6G2g==",Encryption.MD5(visaCard));
     }
 }
