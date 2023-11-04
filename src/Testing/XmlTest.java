@@ -15,7 +15,7 @@ public class XmlTest {
     @Before
     public void setUp() {
         xmlManager = new XMLManager();
-        testCard = new Card("UsuarioPrueba", 123, "PublicKeyPrueba", 100.0, 3, "1234567890123456", "12/25", "123");
+        testCard = new Card("UsuarioPrueba", 123, "PublicKeyPrueba", 100.0, 3, "1234567890123456", 12/25, 123, 0);
     }
 
     @Test

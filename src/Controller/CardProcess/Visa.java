@@ -8,8 +8,6 @@ import Controller.Encryption;
 import Controller.ProcessManager;
 import Model.BasicObjects.Card;
 import Model.FileManagers.XMLManager;
-import Controller.CardProcess.*;
-
 
 public class Visa implements ProcessManager{
     

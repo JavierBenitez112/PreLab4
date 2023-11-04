@@ -25,7 +25,7 @@ public class JsonManager implements IFile {
         jsonCard.put("FechaDeVencimiento", card.FechaDeVencimiento);
         jsonCard.put("CodigoCVV", card.CodigoCVV);
 
-        try (FileWriter fileWriter = new FileWriter(filename)) {
+        try (FileWriter fileWriter = new FileWriter("src/Model/Db/MasterCard/" + filename + ".json")) {
             fileWriter.write(jsonCard.toJSONString());
         } catch (IOException e) {
             e.printStackTrace();

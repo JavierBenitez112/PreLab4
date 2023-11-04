@@ -24,7 +24,7 @@ public class ControllerTest {
             assertEquals(true, true);
         } catch (IOException e) {
             e.printStackTrace();
-            assertEquals(false, false);
+            assertEquals(true, false);
         }
 
 
