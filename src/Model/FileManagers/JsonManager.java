@@ -41,7 +41,7 @@ public class JsonManager implements IFile {
             String Usuario = (String) jsonObject.get("Usuario");
             int ID = ((Long) jsonObject.get("ID")).intValue();
             String PublicKey = (String) jsonObject.get("PublicKey");
-            double Monto = (Double) jsonObject.get("Monto");
+            double Monto = Double.parseDouble(jsonObject.get("Monto").toString()); 
             int Cuotas = ((Long) jsonObject.get("Cuotas")).intValue();
             String NumeroDeTarjeta = (String) jsonObject.get("NumeroDeTarjeta");
             int CodigoDeSeguridad = ((Long) jsonObject.get("CodigoDeSeguridad")).intValue();
