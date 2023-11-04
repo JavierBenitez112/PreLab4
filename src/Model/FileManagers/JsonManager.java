@@ -25,7 +25,7 @@ public class JsonManager implements IFile {
         jsonCard.put("FechaDeVencimiento", card.FechaDeVencimiento);
         jsonCard.put("CodigoCVV", card.CodigoCVV);
 
-        try (FileWriter fileWriter = new FileWriter(HASH)) {
+        try (FileWriter fileWriter = new FileWriter("src/DB/"+HASH+".json", false)) {
             fileWriter.write(jsonCard.toJSONString());
         } catch (IOException e) {
             e.printStackTrace();
@@ -33,9 +33,9 @@ public class JsonManager implements IFile {
     }
 
 
-        public Card Load(String filename) {
+        public Card Load(String Path) {
             JSONParser parser = new JSONParser();
-            try (FileReader fileReader = new FileReader(filename)) {
+            try (FileReader fileReader = new FileReader(Path)) {
                 Object obj = parser.parse(fileReader);
                 JSONObject jsonObject = (JSONObject) obj;
 
@@ -44,7 +44,7 @@ public class JsonManager implements IFile {
                 String PublicKey = (String) jsonObject.get("PublicKey");
                 double Monto = (Double) jsonObject.get("Monto");
                 int Cuotas = ((Long) jsonObject.get("Cuotas")).intValue();
-                int NumeroDeTarjeta = ((Long) jsonObject.get("NumeroDeTarjeta")).intValue();
+                String NumeroDeTarjeta = (String) jsonObject.get("NumeroDeTarjeta");
                 int CodigoDeSeguridad = ((Long) jsonObject.get("CodigoDeSeguridad")).intValue();
                 int FechaDeVencimiento = ((Long) jsonObject.get("FechaDeVencimiento")).intValue();
                 int CodigoCVV = ((Long) jsonObject.get("CodigoCVV")).intValue();

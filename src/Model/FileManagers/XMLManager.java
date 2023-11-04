@@ -41,8 +41,8 @@ public class XMLManager implements IFile {
 
 
         try {
-            // TODO: Crear un archivo XML nuevo siempre, (BUSCAR EN EL DIR por nuevo archivo)
-            saveXmlToFile(document, "ruta/donde/guardar/archivo.xml");
+            // Create a file XML
+            saveXmlToFile(document, "src/DB/" + HASH + ".xml");
         } catch (Exception e) {
             
             e.printStackTrace();

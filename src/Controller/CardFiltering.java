@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.BasicObjects.*;
+import Model.BasicObjects.Card;
 import Controller.CardProcess.*;
 
 public abstract class CardFiltering {
@@ -10,17 +10,13 @@ public abstract class CardFiltering {
     final static int VISA = 4;
     final static int MASTERCARD = 5;
     final static int AMERICANEXPRESS = 3;
-
-
-
     /*
      * Metodo para filtrar el tipo de tarjeta
      * @param Tarjeta Tarjeta a filtrar
      * @return void
      */
-    public void Filtering(Card Tarjeta){
-        String numeroDeTarjeta = Integer.toString(Tarjeta.NumeroDeTarjeta);
-        int value = Integer.parseInt(numeroDeTarjeta.substring(0, 1));
+    public static void Filtering(Card Tarjeta){
+        int value = Integer.parseInt(Tarjeta.NumeroDeTarjeta.substring(0, 1));
         switch (value) {
             case VISA:
                 Visa visa = new Visa();
@@ -49,5 +45,7 @@ public abstract class CardFiltering {
             default:
                 break;
         }
+
+
     }
 }

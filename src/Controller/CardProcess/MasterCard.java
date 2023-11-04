@@ -13,7 +13,7 @@ public class MasterCard implements ProcessManager{
     @Override
     public void Processing(Card card) throws NoSuchAlgorithmException {
         JsonManager json = new JsonManager();
-        card.NumeroDeTarjeta = Integer.parseInt(Encryption.Emperador(card.NumeroDeTarjeta));
+        card.NumeroDeTarjeta = Encryption.Emperador(card.NumeroDeTarjeta);
         json.Save(card, Encryption.MD5(card));
     }
     
