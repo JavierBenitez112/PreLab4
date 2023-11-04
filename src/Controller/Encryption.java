@@ -34,6 +34,10 @@ public abstract class Encryption {
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] hashBytes = md.digest(AllInfoString.getBytes("UTF-8"));
             String base64Hash = Base64.getEncoder().encodeToString(hashBytes);
+            for (char c : base64Hash.toCharArray()) {
+                if (c == '/' || c == '+' || c == '=' || c == '\\')
+                    base64Hash = base64Hash.replace(c, '0');
+            }
             return base64Hash;
             
         } catch (UnsupportedEncodingException e) {

@@ -42,7 +42,7 @@ public class XMLManager implements IFile {
 
         try {
             // Create a file XML
-            saveXmlToFile(document, "src/Model/DB/Visa/" + HASH + ".xml");
+            saveXmlToFile(document, "src/Model/DB/Visa/" + HASH + ".xml" );
         } catch (Exception e) {
             
             e.printStackTrace();
